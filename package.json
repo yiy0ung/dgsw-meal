@@ -1,0 +1,37 @@
+{
+  "name": "dgsw-meal",
+  "version": "1.0.1",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "homepage": "https://github.com/wlsdud2194/dgsw-meal.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wlsdud2194/dgsw-meal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wlsdud2194/dgsw-meal/issues"
+  },
+  "keywords": [
+    "meal",
+    "dgsw",
+    "school"
+  ],
+  "author": "wlsdud2194 <wlsdud2194@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "example": "babel-node example/example.js",
+    "test": "echo not exist test"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "typescript": "^3.8.3"
+  }
+}
