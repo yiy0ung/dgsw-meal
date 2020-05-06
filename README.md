@@ -1,3 +1,5 @@
+![](https://github.com/wlsdud2194/dgsw-meal/workflows/MainTest/badge.svg)
+
 # dgsw-meal
 Daegu Software High School meal Parsing Library for node.js
 
@@ -29,4 +31,4 @@ const meal = dgswMeal.getMeal(2020, 5);
 ```
 
 ## Licence
-MIT
+![MIT](https://github.com/wlsdud2194/dgsw-meal/blob/master/LICENSE)

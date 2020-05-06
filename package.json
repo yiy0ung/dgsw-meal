@@ -21,10 +21,10 @@
   "author": "wlsdud2194 <wlsdud2194@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "example": "babel-node example/example.js",
     "build": "tsc",
     "testing": "mocha --reporter spec",
-    "test": "yarn build && yarn test"
+    "test": "yarn build && yarn test",
+    "publish": "npm publish"
   },
   "dependencies": {
     "axios": "^0.19.2"
