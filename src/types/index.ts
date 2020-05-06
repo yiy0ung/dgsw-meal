@@ -14,3 +14,7 @@ export type MealObj = {
   date: string;
   menu: string;
 };
+
+export type ArrangeMeal = {
+  [key: string]: any,
+};

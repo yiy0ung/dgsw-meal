@@ -21,9 +21,10 @@
   "author": "wlsdud2194 <wlsdud2194@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
     "example": "babel-node example/example.js",
-    "test": "echo not exist test"
+    "build": "tsc",
+    "testing": "mocha --reporter spec",
+    "test": "yarn build && yarn test"
   },
   "dependencies": {
     "axios": "^0.19.2"
@@ -32,6 +33,8 @@
     "@babel/core": "^7.9.6",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2",
     "typescript": "^3.8.3"
   }
 }

@@ -1,4 +1,8 @@
-import { MthDiet, MealObj } from "../types";
+import { MthDiet, MealObj, ArrangeMeal } from "../types";
+
+export function checkNum(val: any) {
+  return (typeof val === 'number');
+}
 
 export function fullZero(num: number|string, zeroNum: number) {
   let numStr = '' + num;
@@ -31,7 +35,7 @@ function parseMeal(mealRow: string|null): MealObj|null {
 
 export function arrangeMeal(weeklyMealList: MthDiet[]) {
   const mealList: (MealObj|null)[] = [];
-  let result = {};
+  let result: ArrangeMeal = {};
 
   for (const mealData of weeklyMealList) {
     mealList.push(parseMeal(mealData.sun));
@@ -45,10 +49,7 @@ export function arrangeMeal(weeklyMealList: MthDiet[]) {
 
   for (const meal of mealList) {
     if (meal) {
-      result = {
-        ...result,
-        [meal.date]: meal.menu,
-      };
+      result[meal.date] = meal.menu;
     }
   }
 
