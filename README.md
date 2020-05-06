@@ -1,4 +1,5 @@
 ![](https://github.com/wlsdud2194/dgsw-meal/workflows/MainTest/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # dgsw-meal
 Daegu Software High School meal Parsing Library for node.js
