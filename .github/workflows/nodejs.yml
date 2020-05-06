@@ -25,11 +25,8 @@ jobs:
     
     - name: Install Dependency
       run: yarn install
-
-    - name: Project build
-      run: yarn build
       
-    - name: Project Testing
+    - name: Project Build and Testing
       run: yarn test
       env:
         CI: true
