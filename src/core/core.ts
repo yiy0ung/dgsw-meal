@@ -30,7 +30,7 @@ export async function getMeal(year: number, month: number) {
   return {
     year: numYear,
     month: numMonth,
-    day: todayDate,
+    currentDay: todayDate,
     meal,
     today: meal['' + todayDate],
   };

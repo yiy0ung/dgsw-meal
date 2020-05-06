@@ -6,7 +6,8 @@ describe('get dgsw meal', function() {
   const [year, month] = [2020, 5];
   const expectedVal = {
     year: 2020,
-    month: 8,
+    month: 5,
+    currentDay: 5,
     meal: {},
     today: 'string',
   };

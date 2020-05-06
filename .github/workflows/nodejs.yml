@@ -1,4 +1,4 @@
-name: MainTest
+name: build
 
 on:
   push:
@@ -22,9 +22,6 @@ jobs:
     
     - name: Install Dependency
       run: yarn install
-
-    - name: Project build
-      run: yarn build
       
-    - name: Project Testing
-      run: yarn testing
+    - name: Project Build and Testing
+      run: yarn test
