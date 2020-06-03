@@ -29,7 +29,7 @@ yarn install dgsw-meal
 - example
 ```js
 const dgswMeal = require('dgsw-meal'); // es5
-import dgswMeal from 'dgsw-meal'; // es6
+import * as dgswMeal from 'dgsw-meal'; // es6
 
 dgswMeal.getMeal(2020, 5).then(console.log);
 /** console
@@ -49,4 +49,4 @@ dgswMeal.getMeal(2020, 5).then(console.log);
 ```
 
 ## Licence
-![MIT](https://github.com/wlsdud2194/dgsw-meal/blob/master/LICENSE)
+[MIT](https://github.com/wlsdud2194/dgsw-meal/blob/master/LICENSE)

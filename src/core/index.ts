@@ -1,12 +1,8 @@
 import * as request from './request';
 import { arrangeMeal, checkNum } from './utils';
-import { Options, MealResult } from '../types';
+import { MealResult } from '../types';
 
-export async function getMeal(
-  year: number, 
-  month: number, 
-  options?: Options<{}>,
-) {
+export async function getMeal(year: number, month: number) {
   if (!(checkNum(year) && checkNum(month))) {
     throw Error('TypeError: parameter is only allowed number(integer) type');
   } else if (!year || year <= 0) {
@@ -18,18 +14,13 @@ export async function getMeal(
   const numYear = Math.floor(year);
   const numMonth = Math.floor(month);
 
-  const axios = request.generateEndpoint(options?.cors);
-  const { status, data: sid } = await request.getSessionId(axios);
+  const { status, data: sid } = await request.getSessionId();
 
   if (status === 'error' || !sid) {
     return null;
   }
 
-  const mealRow = await request.getMealRow(axios, {
-    jsessionId: sid,
-    year: numYear, 
-    month: numMonth,
-  });
+  const mealRow = await request.getMealRow(sid, numYear, numMonth);
   
   if (!(mealRow || Array.isArray(mealRow.mthDietList))) {
     return null;

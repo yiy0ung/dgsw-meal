@@ -26,11 +26,14 @@ describe('get dgsw meal', function() {
 });
 
 describe('getMeal exception handling', function() {
-  it('should pass number parameter of month', async () => {
-    try {
-      await index.getMeal(2020, "05");
-    } catch (error) {
-      expect(error.message).equal('TypeError: parameter is only allowed number(integer) type'); 
-    }
+  it('should only pass number parameter of month', (done) => {
+    index.getMeal(2020, '05')
+      .then((result) => {
+        done(new Error(`passed string parameter : ${result}`));
+      })
+      .catch(error => {
+        expect(error.message).equal('TypeError: parameter is only allowed number(integer) type')
+        done();
+      });
   });
 });
