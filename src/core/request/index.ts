@@ -1,17 +1,13 @@
-import Axios, { AxiosInstance } from 'axios';
+import Axios from 'axios';
 import { fullZero } from '../utils';
 import { neisDgInfo, dgswData } from '../seed/data';
 
-export function generateEndpoint(cors: boolean = false) {
-  const url = cors ? '' : `https://${neisDgInfo.host}`;
+const dgsw = Axios.create({
+  baseURL: `https://${neisDgInfo.host}`,
+});
 
-  return Axios.create({
-    baseURL: url,
-  });
-}
-
-export function getSessionId(axios: AxiosInstance) {
-  return axios.get(`/${neisDgInfo.main}`, {
+export function getSessionId() {
+  return dgsw.get(`/${neisDgInfo.main}`, {
     withCredentials: true,
   }).then((res) => {
     const cookie = res.headers['set-cookie'];
@@ -38,11 +34,9 @@ export function getSessionId(axios: AxiosInstance) {
   }));
 }
 
-export async function getMealRow(axios: AxiosInstance, {
-  jsessionId, year, month,
-}: { jsessionId: string, year: number, month: number }) {
+export async function getMealRow(jsessionId: string, year: number, month: number) {
   try {
-    const { data } = await axios.post(`/${neisDgInfo.mealUrl}`, {
+    const { data } = await dgsw.post(`/${neisDgInfo.mealUrl}`, {
       ay: year,
       mm: fullZero(month, 2),
       schulCode: dgswData.schulCode,
