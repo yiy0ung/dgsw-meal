@@ -14,13 +14,14 @@ describe('get dgsw meal', function() {
     today: 'string',
   };
 
-  it('should reture meal result object', async () => {
+  it('should reture meal result object', async (done) => {
     const meal = await index.getMeal(year, month);
 
     if (!meal) {
-      assert.fail(`fail to get meal data : ${meal}`);
+      done(new Error(`fail to get meal data : ${meal}`));
     } else {
       assert.notDeepEqual(meal, expectedVal);
+      done();
     }
   });
 });
