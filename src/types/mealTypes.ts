@@ -1,3 +1,9 @@
+export type MealOptions = {
+  year: number;
+  month: number;
+  // date?: number;
+  // disableAllergyInfo: boolean;
+};
 
 export type MthDiet = {
   weekGb: string|null;
