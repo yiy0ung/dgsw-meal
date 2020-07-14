@@ -23,5 +23,5 @@ jobs:
     - name: Install Dependency
       run: yarn install
       
-    - name: Project Build and Testing
-      run: yarn test
+    # - name: Project Build and Testing
+    #   run: yarn test

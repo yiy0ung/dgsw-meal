@@ -1,6 +1,7 @@
 
-export function checkNum(val: any) {
-  return (typeof val === 'number');
+type JSDataType = 'bigint'|'boolean'|'function'|'number'|'object'|'string'|'symbol'|'undifined';
+export function checkType(val: any, type: JSDataType) {
+  return (typeof val === type);
 }
 
 export function fullZero(num: number|string, zeroNum: number) {

@@ -13,7 +13,7 @@ function parseMeal(mealRow: string|null): MealObj|null {
 
   const meal = {
     date: match[0],
-    menu: mealRow.slice(2).replace(/<br \/>/gi, '\n').slice(1),
+    menu: mealRow.slice(match[0].length).replace(/<br \/>/gi, '\n').slice(1),
   };
 
   return meal;
