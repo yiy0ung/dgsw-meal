@@ -31,7 +31,10 @@ yarn install dgsw-meal
 const dgswMeal = require('dgsw-meal'); // es5
 import * as dgswMeal from 'dgsw-meal'; // es6
 
-dgswMeal.getMeal(2020, 5).then(console.log);
+dgswMeal.getMeal({
+  year: 2020,
+  month: 8
+}).then(console.log);
 /** console
   {
     "year": number,
